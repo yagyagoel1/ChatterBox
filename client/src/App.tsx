@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import { lazy, Suspense } from 'react';
 import ProjectRoute from './auth/ProjectRoute';
+import { LayoutLoader } from './components/styles/layout/Loaders';
 
 const Home = lazy(() => import('./pages/Home'));
 const NotFound = lazy(() => import('./pages/NotFound'));
@@ -14,7 +15,7 @@ const user = true;
 function App() {
   return (
     <BrowserRouter>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<LayoutLoader></LayoutLoader>}>
         <Routes>
           <Route path="/" element={<ProjectRoute user={user} redirect="/login"><Home /></ProjectRoute>} />
           <Route path="/chat/:chatId" element={<ProjectRoute user={user} redirect="/login"><Chat /></ProjectRoute>} />
