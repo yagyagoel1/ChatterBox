@@ -5,7 +5,6 @@ import { VisuallyHiddenInput } from '../components/styles/StyledComponents'
 import { useFileHandler, useInputValidation, useStrongPassword } from '6pp'
 import { usernameValidator } from '../utils/Validators'
 
-let user = true;
 const Login = () => {
     const [isLogin, setIsLogin] = React.useState(true)
     const toggleLogin = () => {
